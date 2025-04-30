@@ -14,9 +14,17 @@
     section div {
       margin-top:10px;
     }
-    h3 {
+    section h3 {
       text-align:center;
-      margin-bottom:20px;
+      color:#333;
+      font-size:22px;
+      margin-bottom:25px;
+    }
+    section input, select {
+      border:1px solid #ccc;
+      border-radius:4px;
+      margin:3px 0;
+      font-size:14px;
     }
     #txt {
       width:420px;
@@ -41,10 +49,6 @@
     #submit:hover {
       background-color:#ec048c;
       color:white;
-    }
-    input, select {
-      border:1px solid #ccc;
-      border-radius:4px;
     }
     #umsg, #pmsg {
       font-size:12px;

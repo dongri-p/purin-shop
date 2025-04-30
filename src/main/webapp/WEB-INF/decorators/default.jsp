@@ -8,14 +8,13 @@
 <title>Insert title here</title>
   <style>
     @font-face {
-      font-family:'GongGothicMedium';
-      src:url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+      font-family:Arial, sans-serif;
       font-weight:300;
       font-style:normal;
-   } 
+    } 
     body {
       margin:0px;
-      font-family:'GongGothicMedium';
+      font-family:Arial, sans-serif;
     }
     #fouter {
       width:100%;
