@@ -102,8 +102,8 @@
         		document.getElementById("pmsg").style.color="red";
         		pchk=0;
         	}
-    	}r
-    	
+    	}
+    	오후
     }
     
     var uchk=0;  // 중복 확인 완료(중복X) => 1
@@ -116,10 +116,24 @@
     		return false;
     	}
     	else if(pchk == 0)
-    	{
-    		alert("비밀번호를 확인하세요.")
-    		return false;
-    	}
+    		{
+    			alert("비밀번호를 확인하세요.")
+    			return false;
+    		}
+    		else if(document.mform.name.value == "")
+    			{
+					alert("이름을 확인하세요.")
+					return false;
+				}
+    			else if(document.mform.phone.value.length == 0)
+    				{
+    					alert("전화번호를 확인하세요.")
+						return false;
+					}
+    				else
+        			{
+    					return true;
+    				}
     }
   </script>
 </head>
