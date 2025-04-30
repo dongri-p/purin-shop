@@ -53,6 +53,8 @@
   <script>
     function useridCheck(userid)
     {
+    	userid=userid.trim();
+    	
     	if(userid.length >= 6)
 		{
     		var chk=new XMLHttpRequest();
@@ -100,7 +102,7 @@
         		document.getElementById("pmsg").style.color="red";
         		pchk=0;
         	}
-    	} 0121 오전 01:40:00
+    	}r
     	
     }
     
