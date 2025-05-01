@@ -23,7 +23,8 @@
     .msection h3 {
       font-size:30px;
       color:#ec048c;
-      margin-bottom:30px;
+      margin-bottom:40px;
+      margin-top:15px;
     }
     .msection input[type="text"],
     .msection input[type="password"],
@@ -47,13 +48,16 @@
 	.msection .cemail {
       display:flex;
       align-items:center;
-      gap:5px;
+      gap:6px;
     }
-    .msection .cemail input {
-      flex:1;
-    }
-    .msection .cemail select {
-      width:44%;
+    .msection .cemail input, .cemail select {
+      height:46px;
+      padding:10px 14px;
+      font-size:15px;
+      border:2px solid #f8d0d9;
+      border-radius:12px;
+      background:#fffafc;
+      box-sizing:border-box;
     }
     .msection input[type="submit"],
     .msection input[type="button"] {
@@ -82,7 +86,7 @@
       background-color:#cccccc;
     }
     .msection span {
-      font-size:13px;
+      font-size:15px;
       display:block;
       margin-top:5px;
     }
@@ -151,34 +155,55 @@
     {	
     	if(uchk == 0) // 중복체크가 되었는지 검사
     	{
-    		alert("아이디를 확인하세요.")
+    		alert("아이디를 확인하세요.");
     		return false;
     	}
     	else if(pchk == 0)
     		{
-    			alert("비밀번호를 확인하세요.")
+    			alert("비밀번호를 확인하세요.");
     			return false;
     		}
     		else if(document.mform.name.value == "")
     			{
-					alert("이름을 확인하세요.")
+					alert("이름을 확인하세요.");
 					return false;
 				}
     			else if(document.mform.phone.value.length == 0)
     				{
-    					alert("전화번호를 확인하세요.")
+    					alert("전화번호를 확인하세요.");
 						return false;
 					}
     				else
         			{
+    				    // 이메일의 아이디와 서버주소를 합쳐서 하나의 input태그에 전달
+    				    var emailOk=document.mform.uid.value+"@"+document.mform.server.value;
+    				    document.mform.email.value=emailOk;
     					return true;
     				}
     }
+    
+    function getServer(my)
+    {
+		const serverInput=document.getElementById("server");
+		
+		if(my.value == "self")
+		{
+			serverInput.removeAttribute("readonly");
+			serverInput.value="";
+			serverInput.focus();
+		}
+		else
+		{
+			serverInput.value=my.value;
+			serverInput.setAttribute("readonly", true);
+		}
+	}
   </script>
 </head>
 <body> <!-- /member/member.jsp -->
  <section class="msection">
     <form method="post" name="mform" action="memberOk" onsubmit="return check()">
+      <input type="hidden" name="email">
       <h3> 회원 가입 </h3>
       <div>
         <input type="text" name="userid" id="txt" placeholder="아이디(6자 이상)" onblur="useridCheck(this.value)">
@@ -191,14 +216,15 @@
         <br> <span id="pmsg"> </span>
       </div>
       <div class="cemail">
-        <input type="text" name="uid" class="email"> @
-        <input type="text" name="server" class="email" placeholder="도메인" readonly>
+        <input type="text" name="uid" id="uid"> @
+        <input type="text" name="server" id="server" placeholder="도메인" readonly>
         <select name="dserver" id="select" onchange="getServer(this)">
-          <option value="self"> 직접입력 </option>
+          <option value=""> 선택하기 </option>
           <option value="naver.com"> naver.com </option>
           <option value="daum.net"> daum.net </option>
           <option value="gmail.com"> gmail.com </option>
           <option value="kakao.com"> kakao.com </option>
+          <option value="self"> 직접입력 </option>
         </select>
       </div>
       <div> <input type="text" name="phone" id="txt" placeholder="전화번호"> </div>
