@@ -6,52 +6,88 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
   <style>
-    section {
-      width:1100px;
-      margin:auto;
+    @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+  
+    .msection {
+      font-family:'Jua', sans-serif;
+      background:#ffffff;
+      max-width:480px;
+      margin:60px auto;
+      padding:40px 30px;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0, 0, 0, 0.1);
       text-align:center;
+      position:relative;
+      overflow:hidden;
     }
-    section div {
-      margin-top:10px;
+    .msection h3 {
+      font-size:30px;
+      color:#ec048c;
+      margin-bottom:30px;
     }
-    section h3 {
-      text-align:center;
-      color:#333;
-      font-size:22px;
-      margin-bottom:25px;
+    .msection input[type="text"],
+    .msection input[type="password"],
+    .msection select {
+      width:100%;
+      height:46px;
+      padding:10px 14px;
+      margin-top:14px;
+      font-size:15px;
+      border:2px solid #f8d0d9;
+      border-radius:12px;
+      box-sizing:border-box;
+      background:#fffafc;
+      transition:all 0.3s ease;
     }
-    section input, select {
-      border:1px solid #ccc;
-      border-radius:4px;
-      margin:3px 0;
-      font-size:14px;
+    .msection input:focus,
+    .msection select:focus {
+      border-color: #ec048c;
+      outline: none;
     }
-    #txt {
-      width:420px;
-      height:42px;
+	.msection .cemail {
+      display:flex;
+      align-items:center;
+      gap:5px;
     }
-    #email {
-      width:130px;
-      height:42px;
+    .msection .cemail input {
+      flex:1;
     }
-    #select {
-      width:132px;
-      height:47px;
+    .msection .cemail select {
+      width:44%;
+    }
+    .msection input[type="submit"],
+    .msection input[type="button"] {
+      width:48%;
+      height:48px;
+      margin-top:24px;
+      border:none;
+      border-radius:12px;
+      font-size:16px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s ease;
     }
     #submit {
-      width:428px;
-      height:46px;
       background:#f8d0d9;
-      border:none;
       color:black;
-      cursor:pointer;
     }
     #submit:hover {
       background-color:#ec048c;
-      color:white;
+      color: white;
+    }
+    #btn {
+      background-color:#eeeeee;
+    }
+    #btn:hover {
+      background-color:#cccccc;
+    }
+    .msection span {
+      font-size:13px;
+      display:block;
+      margin-top:5px;
     }
     #umsg, #pmsg {
-      font-size:12px;
+      font-weight:bold;
     }
   </style>
   <script>
@@ -107,7 +143,6 @@
         		pchk=0;
         	}
     	}
-    	오후
     }
     
     var uchk=0;  // 중복 확인 완료(중복X) => 1
@@ -142,7 +177,7 @@
   </script>
 </head>
 <body> <!-- /member/member.jsp -->
- <section>
+ <section class="msection">
     <form method="post" name="mform" action="memberOk" onsubmit="return check()">
       <h3> 회원 가입 </h3>
       <div>
@@ -155,10 +190,11 @@
         <input type="password" name="pwd2" id="txt" placeholder="비밀번호 확인" onkeyup="pwdCheck()">
         <br> <span id="pmsg"> </span>
       </div>
-      <div>
-        <input type="text" name="uid" id="email">@<input type="text" name="server" id="email">
-        <select name="deserver" id="select">
-          <option value=""> 직접입력 </option>
+      <div class="cemail">
+        <input type="text" name="uid" class="email"> @
+        <input type="text" name="server" class="email" placeholder="도메인" readonly>
+        <select name="dserver" id="select" onchange="getServer(this)">
+          <option value="self"> 직접입력 </option>
           <option value="naver.com"> naver.com </option>
           <option value="daum.net"> daum.net </option>
           <option value="gmail.com"> gmail.com </option>
@@ -166,7 +202,10 @@
         </select>
       </div>
       <div> <input type="text" name="phone" id="txt" placeholder="전화번호"> </div>
-      <div> <input type="submit" value="회원 가입" id="submit"> </div>
+      <div>
+        <input type="button" value="취 소" id="btn" onclick="location='../main/main'">
+        <input type="submit" value="회원 가입" id="submit">
+      </div>
     </form>
  </section>
 </body>
