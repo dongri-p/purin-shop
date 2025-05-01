@@ -30,8 +30,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public String memberOk(MemberDto mdto)
 	{
-		// 아이디 중복체크를 다시 한다
-		
 		mapper.memberOk(mdto);
 		
 		return "redirect:/login/login";
