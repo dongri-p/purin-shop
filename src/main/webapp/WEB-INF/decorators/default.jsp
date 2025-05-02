@@ -188,7 +188,7 @@
   	<div id="memMenu">
   	  장바구니 |
   	 <c:if test="${userid == null}"> 
-  	  로그인 |
+  	  <a href="../login/login"> 로그인 </a> |
   	  <a href="../member/member"> 회원가입 </a> |
   	 </c:if>
   	 <c:if test="${userid != null}"> 
