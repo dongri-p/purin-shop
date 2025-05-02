@@ -32,7 +32,6 @@ public class MemberController {
 	public String memberOk(MemberDto mdto)
 	{
 		return service.memberOk(mdto);
-		오후 35:02
 	}
 	
 
