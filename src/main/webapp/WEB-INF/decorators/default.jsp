@@ -195,7 +195,7 @@
   	 </c:if>
   	 <c:if test="${userid != null}"> 
   	  ${name}님 |
-  	  <a href="logout"> 로그아웃 </a> |
+  	  <a href="../login/logout"> 로그아웃 </a> |
   	 </c:if> 
   	  고객센터
   	</div>
