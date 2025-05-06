@@ -178,7 +178,9 @@
   </div>
   
   <header>
-    <div id="logo"> <img src="../static/logo.png" width="250" valign="middle"> </div>
+    <div id="logo">
+      <img src="../static/logo.png" width="250" valign="middle" onclick="location='../main/main'">
+    </div>
   	<div id="search"> 
   	  <div id="searchForm">
   	    <input type="text" name="sword" id="sword">

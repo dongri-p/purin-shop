@@ -16,7 +16,6 @@ public class LoginController {
 	public String login()
 	{
 		return service.login();
-		오후 55:11
 	}
 
 }
