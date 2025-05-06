@@ -194,8 +194,8 @@
   	  <a href="../member/member"> 회원가입 </a> |
   	 </c:if>
   	 <c:if test="${userid != null}"> 
-  	  ???님 |
-  	  로그아웃 |
+  	  ${name}님 |
+  	  <a href="logout"> 로그아웃 </a> |
   	 </c:if> 
   	  고객센터
   	</div>
