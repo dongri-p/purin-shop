@@ -60,12 +60,13 @@
   <script>
     function findU()
     {
-      open("fUserid","op","width=700,height=500");
+        open("fUserid","op","width=700,height=500");
     }
     function findP()
     {
-      open("fPwd","op","width=700,height=500");
+        open("fPwd","op","width=700,height=500");
     }
+    
   </script>
 </head>
 <body> <!-- /login/login.jsp -->
@@ -74,7 +75,7 @@
      <!-- param으로 넘어오는 값을 사용가능 -->
     </c:if>
     <h3 align="center"> 로그인 </h3>
-    <form method="post" action="loginOk">
+    <form method="post" action="loginOk" name="lform" onsubmit="return check()">
       <div> <input type="text" name="userid" id="txt" placeholder="아이디"> </div>
       <div>
         <input type="password" name="pwd" id="txt" placeholder="비밀번호">
@@ -86,7 +87,7 @@
       <div class="find">
         <span onclick="findU()"> 아이디 찾기 </span>&nbsp;|&nbsp;
         <span onclick="findP()"> 비밀번호 찾기 </span>&nbsp;|&nbsp;
-        <span onclick="location=../member/member"> 회원가입 </span>
+        <span onclick="location='../member/member'"> 회원가입 </span>
       </div>
     </form>
   </section>
