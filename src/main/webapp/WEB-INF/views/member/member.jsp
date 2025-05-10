@@ -77,7 +77,7 @@
     }
     #submit:hover {
       background-color:#ec048c;
-      color: white;
+      color:white;
     }
     #btn {
       background-color:#eeeeee;
