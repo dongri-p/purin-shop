@@ -3,11 +3,13 @@ package com.example.demo.login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.member.MemberDto;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -18,9 +20,9 @@ public class LoginController {
 	private LoginService service;
 	
 	@GetMapping("/login/login")
-	public String login()
+	public String login(HttpServletRequest request, Model model)
 	{
-		return service.login();
+		return service.login(request, model);
 	}
 	
 	@PostMapping("/login/loginOk")

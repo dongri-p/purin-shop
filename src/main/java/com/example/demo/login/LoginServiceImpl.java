@@ -3,9 +3,11 @@ package com.example.demo.login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 import com.example.demo.member.MemberDto;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -16,8 +18,11 @@ public class LoginServiceImpl implements LoginService {
 	private LoginMapper mapper;
 
 	@Override
-	public String login()
+	public String login(HttpServletRequest request, Model model)
 	{
+		String err=request.getParameter("err");
+		
+		model.addAttribute("err", err);
 		
 		return "/login/login";
 	}
