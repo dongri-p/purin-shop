@@ -57,6 +57,7 @@
       width:300px;
       height:70px;
       line-height:70px;
+      cursor:pointer;
     }
     header #search {
       display:inline-block;
@@ -184,7 +185,7 @@
   	<div id="search"> 
   	  <div id="searchForm">
   	    <input type="text" name="sword" id="sword">
-  	    <img src="../static/s.png" valign="middle">
+  	    <img src="../static/s.png" valign="middle" style="cursor:pointer;">
   	  </div>
     </div>
   	<div id="memMenu">
