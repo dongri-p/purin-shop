@@ -173,13 +173,13 @@
     					alert("전화번호를 확인하세요.");
 						return false;
 					}
-    				else
-        			{
-    				    // 이메일의 아이디와 서버주소를 합쳐서 하나의 input태그에 전달
-    				    var emailOk=document.mform.uid.value+"@"+document.mform.server.value;
-    				    document.mform.email.value=emailOk;
-    					return true;
-    				}
+    	else
+        {
+    	    // 이메일의 아이디와 서버주소를 합쳐서 하나의 input태그에 전달
+            var emailOk=document.mform.uid.value+"@"+document.mform.server.value;
+    		document.mform.email.value=emailOk;
+    		return true;
+    	}
     }
     
     function getServer(my)
