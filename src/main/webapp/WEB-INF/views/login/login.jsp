@@ -23,8 +23,8 @@
       margin-bottom:30px;
     }
     section input[type="text"],
-    input[type="password"],
-    input[type="submit"] {
+    section input[type="password"],
+    section input[type="submit"] {
       width:420px;
       padding:12px;
       margin:5px 0;
@@ -33,8 +33,8 @@
       box-sizing:border-box;
       font-size:16px;
     }
-    input[type="text"]:focus,
-    input[type="password"]:focus {
+    section input[type="text"]:focus,
+    section input[type="password"]:focus {
       border-color:#ec048c;
       outline:none;
     }
