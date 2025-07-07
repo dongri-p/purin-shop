@@ -34,5 +34,11 @@ public class MemberController {
 		return service.memberOk(mdto);
 	}
 	
+	@GetMapping("/member/myticket")
+	public String myticket()
+	{
+		return service.myticket();
+	}
+	
 
 }
